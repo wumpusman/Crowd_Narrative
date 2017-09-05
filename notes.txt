@@ -1,0 +1,172 @@
+
+
+Find cool things in NYC auto selector - same principels
+
+  
+Rules: 
+          Must end at a a paragraph - OR picks up from last sentence
+          A person cannot be exposed to more than 5 sentences - chunking 
+          Shown last sentence to connect from arbitrarily, and to end with arbitrarily
+          A person is show context of full 'summary', what happened at N-1, what happened at N+1
+
+          Person must write recap or rewrite of sentence, AND full summary
+
+           Pay is 25 cents - ill time out how much
+
+
+
+GetSummary() - current summary of story, ill have to do manually for now (but could imagine chunking system - as in first naive pass of system generating this)
+GetContextNMinusOne()  - what is top ranked, best prior one for you
+GetContextNPlusOne() - what will be popular in next segment 
+
+pub FrameSentences() - User frames sentences, and may provide suggestion to shift narrative.  Given *Optional feature*, 3 sentence summ of story, summ of n-1, summ of n+1 , should be like 5-6 sentences they have to write   
+
+pub RankSentences()
+
+ToStyle(Author Style)
+
+pub check Redundancy()  Do any elements in a given element repeat stuff heard in a previous one  automate or have people rank. Manual or automate. 
+
+pub mergeParagraphs() Takes 2 separate paragraphs, or sentences, and joins them, if it needs one . One couuuld train this hypothetically 
+
+Eval_User(New User) - have a user write a praragraph, compare similarity to other users, have user also rank pref to other users. Use this for grouping writing
+
+
+User Use Case:
+     User presented with segment, and summary of past and next statement. User asked to write how much they liked it (look at metrics online) 
+     Provide Example Task and solution
+     User Presented with task prompt. Summarize and Rephrase this paragraph, write it as though...insert prompt here (write it as though it was present day, incorporate the summary and info above). Keep structure, but make minor adjustments versus rewrite  should have both options
+     Provide Example Task, and solution
+     Current Example is the most highly rated stylist example to aid consisttency and adjust 
+     http://biblehub.com/library/marshall/the_wonder_book_of_bible_stories/the_story_of_samson_the.htm
+
+Example run through:
+
+Notes*: People need to read content before summarizing  since it biases them 
+
+Original Story Component:
+
+Now we are to learn of three judges who ruled Israel in turn. Their names were Ibzan, Elon, and Abdon. None of these were men of war, and in their days the land was quiet.
+
+
+But the people of Israel again began to worship idols; and as a punishment God allowed them once more to pass under the power of their enemies. The seventh oppression, which now fell upon Israel, was by far the hardest, the longest and the most widely spread of any, for it was over all the tribes. It came from the Philistines, a strong and warlike people who lived on the west of Israel upon the plain beside the Great Sea. They worshipped an idol called Dagon, which was made in the form of a fish's head on a man's body.
+
+Rewrite, adding more detail and drama:
+
+Your rewrite
+
+There were three men who ruled Israel. They had the names of Ibzan, Elon, and Abdon. Things were peaceful then.
+
+
+Unfortunately, peace would not last. They lacked faith in God, and were punished to serve the Philistines. Without God's protection, a tribe from the west of Israel wreaked havoc.  Empowered by the God Dagon, these philistines were brutal, slaughtering, pillaging as a scourge upon the land.
+
+
+Summary:
+
+Partial Summary: Israel was once peaceful for the Jew's but they started believing in false idols. For this crime, God let a tribe known as the Philistines rule them.
+
+
+Rate: Summary 5/5, Rewrite 4/5, personal enjoyment 3/5, rate suggestion 2.5/5, Clean up 4/5
+
+Iterate Forward:
+
+Provide Suggestion: Make more exaggerated, accuracy is less relevant
+
+Past History Context:
+
+"Israel was once peaceful for the Jew's but they started believing in false idols. For this crime, God let a tribe known as the Philistines rule them."
+
+
+These people, the Philistines, sent their armies up from the plain beside the sea to the mountains of Israel and overran all the land. They took away from the Israelites all their swords and spears, so that they could not fight; and they robbed their land of all the crops, so that the people suffered for want of food. And as before, the Israelites in their trouble, cried out to the Lord, and the Lord heard their prayer.
+
+Rewrite:
+The Philistines rushed from every direction of the land like a locust. The Israelites could not withstand their might. Everything was taken. Their lands were razed, their women raped, their weapons horded. The people starved and in their desperation they called out to God once again. With a grimace, God decided to once again listen to his people's prayer.
+
+
+Summary:
+The Israelites were left to starve under their rule. In their desperation they once again prayed to God.
+
+
+Iterate Forward Once More:
+
+Provide Suggestion: Make more exaggerated, accuracy is less relevant
+
+Past History Context:
+
+Israel was once peaceful for the Jew's but they started believing in false idols. For this crime, God let a tribe known as the Philistines rule them. The Israelites were left to starve under their rule. In their desperation they once again prayed to God.
+
+Current Info:
+
+'In the tribe-land of Dan, which was next to the country of the Philistines, there was living a man named Manoah. One day an angel came to his wife and said:
+"You shall have a son, and when he grows up he will begin to save Israel from the hand of the Philistines. But your son must never drink any wine or strong drink as long as he lives. And his hair must be allowed to grow long and must never be cut, for he shall be a Nazarite under a vow to the Lord."'
+
+Rewrite: One day an angel appeared to the wife of the Israelite Manoah and made a proclamation to the family. "God will gift you with a son and he will return this land to your people". The wife cried out in admiration. "Thank you! Thank yo-" The angel interrupted. "So rude! I wasn't finished. Ok, just heads up, he can't drink and he can't cut his hair". The wife looked perplexed. The angel shrugged, "It's God's way."
+
+Summary: One day, a the wife of an Israelite named Manoah was approached by an angel. The angel proclaimed that they will have a son who will free them, but he must abstain from alcohol and never cut his hair.
+
+
+Iterate Forward One more:
+
+Past History Context:
+
+Israel was once peaceful for the Jew's but they started believing in false idols. For this crime, God let a tribe known as the Philistines rule them. The Israelites were left to starve under their rule. In their desperation they once again prayed to God. One day, a the wife of an Israelite named Manoah was approached by an angel. The angel proclaimed that they will have a son who will free them, but he must abstain from alcohol and never cut his hair.
+
+Show: Previous popular line of dialogue for that segment
+
+"When a child was given especially to God, or when a man gave himself to some work for God, he was forbidden to drink wine, and as a sign, his hair was left to grow long while the vow or promise to God was upon him. Such a person as this was called a Nazarite, a word which means "one who has a vow"; and Manoah's child was to be a Nazarite, and under a vow, as long as he lived."
+
+
+Rewrite: Look, your Son's doing God's work, and this show's his commitment.  He shall be called Nazarite in honor of this, or to be a bit wordy 'one who has a vow'. Let me reiterate, no drinking and let his manly hair weave grow to it's fullest extent.
+
+Summary: He will be called Nazarite in honor of doing God's work which means 'one who has a vow'
+
+
+Reduce Step: If summary to this point is too long, try to keep stuff closer to the front maintained
+Israel was peaceful, but then the Philistines took over. The Israelites suffered and God offered the solution in the form of a boy. The one condition is that the boy must never drink or cut his hair.
+
+
+
+Iterate Backwards:
+
+Past:
+
+Israel was peaceful, but then the Philistines took over. The Israelites suffered and God offered the solution in the form of a boy. The one condition is that the boy must never drink or cut his hair.
+
+
+
+Current Info:
+
+One day an angel appeared to the wife of the Israelite Manoah and made a proclamation to the family. "God will gift you with a son and he will return this land to your people". The wife cried out in admiration. "Thank you! Thank yo-" The angel interrupted. "So rude! I wasn't finished. Ok, just heads up, he can't drink and he can't cut his hair". The wife looked perplexed. The angel shrugged, "It's God's way."
+Future:
+
+Look, your Son's doing God's work, and this show's his commitment.  He shall be called Nazarite in honor of this, or to be a bit wordy 'one who has a vow'. Let me reiterate, no drinking and let his manly hair weave grow to it's fullest extent.
+
+
+Rewrite Current:
+
+An angel appeared before the Israelite Manoah and his wife and said: God will gift you with a son who will return Israel to your people. However! He can't drink or cut his hair. The wife looked extremely perplexed. The angel was irritated and responded:
+
+
+    
+  Combined
+
+There were three men who ruled Israel. They had the names of Ibzan, Elon, and Abdon. Things were peaceful then.
+
+Unfortunately, peace would not last. They lacked faith in God, and were punished to serve the Philistines. Without God's protection, a tribe from the west of Israel wreaked havoc.  Empowered by the God Dagon, these philistines were brutal, slaughtering, pillaging as a scourge upon the land.
+
+The Philistines rushed from every direction of the land like a locust. The Israelites could not withstand their might. Everything was taken. Their lands were razed, their women raped, their weapons horded. The people starved and in their desperation they called out to God once again. With a grimace, God decided to once again listen to his people's prayer.
+     
+One day an angel appeared to the wife of the Israelite Manoah and made a proclamation to the family. "God will gift you with a son and he will return this land to your people". The wife cried out in admiration. "Thank you! Thank yo-" The angel interrupted. "So rude! I wasn't finished. Ok, just heads up, he can't drink and he can't cut his hair". The wife looked perplexed. The angel shrugged, "It's God's way."
+
+Look, your Son's doing God's work, and this show's his commitment.  He shall be called Nazarite in honor of this, or to be a bit wordy 'one who has a vow'. Let me reiterate, no drinking and let his manly hair weave grow to it's fullest extent.
+
+
+
+Filter Step: For Each Segment that is highly rated, taken group from first
+
+
+There were three men who ruled Israel. They had the names of Ibzan, Elon, and Abdon. Things were peaceful then.
+
+Unfortunately, peace would not last. They lacked faith in God, and were punished to serve the Philistines. Without God's protection, a tribe from the west of Israel wreaked havoc.  Empowered by the God Dagon, these philistines were brutal, slaughtering, pillaging as a scourge upon the land. Everything was taken. Their lands were razed, their women raped, their weapons horded. The people starved and in their desperation they called out to God once again. With a grimace, God decided to once again listen to his people's prayer.
+    
+
