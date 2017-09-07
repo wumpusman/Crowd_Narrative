@@ -5,7 +5,7 @@
  * Defines a general users and their general features
  */
 abstract class User {
-	private int [] Scores; //A list of various metrics for how 'good this user is doing overall
+	private Object [] Scores; //A list of various metrics for how 'good this user is doing overall
 	
 	private String Id; // A unique user ID
 	
@@ -13,10 +13,10 @@ abstract class User {
 		
 	}
 	
-	/*
+	/* @param projectID returns score info for a particular user for a particular project
 	 * Queries DB to get a given user's current scores for a given project
 	 */
-	public int [] getScores(String projectID){
+	public Object [] getScores(String projectID){
 		return null;
 	}
 	
