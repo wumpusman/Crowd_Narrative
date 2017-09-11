@@ -12,7 +12,9 @@ abstract class User {
 	public User (){
 		
 	}
-	
+	public void setID(String ID){
+		this.Id=ID;
+	}
 	/* @param projectID returns score info for a particular user for a particular project
 	 * Queries DB to get a given user's current scores for a given project
 	 */
@@ -33,6 +35,10 @@ abstract class User {
 		
 	}
 	
+	
+	public Element [] getElements(String projectID){
+		return null;
+	}
 	/*
 	 * returns the current project we are working on 
 	 */

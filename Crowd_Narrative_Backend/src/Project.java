@@ -8,10 +8,10 @@
 	 /*
 	  * returns current state of the summary, will usually be predefined 
 	  */
-	 Object getSummary(); 
+	 public Element getSummary(); 
 	 
 	 /*
-	  * The id of the given string 
+	  * The id of the given project 
 	  */
 	 String getID();
 	 
@@ -21,11 +21,27 @@
 	  *   Basically if it's repetitive 
 	  */
 	 
-	 double Redunancy(Object userContent, String userID, String contentID);
+	 public double Redunancy(Element userContent, User userID);
+	 
+	 /*
+	  * Provides instructions on how to do project as well as potentially an example, shoudl be fairly limited in size
+	  * @param User if potentially you awnt to take into account information about the user 
+	  */
+	 public Element provideInstructions(User userID, TaskType type);
+	 
+	 public Element provideExample(User userID, String currentLocation,TaskType type);
+	 
+	 public Element priorContext(User userID, String currentLocation,TaskType type);
+	 
+	 public Element postContext(User userID, String currentLocation,TaskType type);
+	 
+	 public void addElement(Element element, User UserID,String currentLocation);
+	 
+	 /*
+	  * adds a user or appends a user if they already exist
+	  */
+	 public void addUser(User UserID);
 	 
 	 
-	 
-	 Object priorContext(User userID, String currentLocation);
- 
 	 
  }
