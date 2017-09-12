@@ -34,13 +34,13 @@ public class WrittenProject implements Project{
 	
 	
 	@Override
-	public WrittenElement priorContext(User userID, String currentLocation) {
+	public WrittenElement priorContext(User userID, String currentLocation, TaskType task) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public WrittenElement postContext(User userID, String currentLocation) {
+	public WrittenElement postContext(User userID, String currentLocation, TaskType task) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -63,7 +63,7 @@ public class WrittenProject implements Project{
 		return null;
 	}
 	@Override
-	public WrittenElement provideInstructions(User userID) {
+	public WrittenElement provideInstructions(User userID, TaskType task) {
 		// TODO Auto-generated method stub
 		return null;
 	}

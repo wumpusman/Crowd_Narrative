@@ -2,7 +2,7 @@
 public class Outline {
 
 		public static void main (String [] args){
-			WrittenProject samsonStory=new WrittenProject();
+			SamsonStoryDemo samsonStory=new SamsonStoryDemo();
 			
 			WrittenUser firstUser=new WrittenUser();
 			WrittenUser secondUser=new WrittenUser();
@@ -12,6 +12,14 @@ public class Outline {
 			samsonStory.addUser(firstUser);
 			samsonStory.addUser(secondUser);
 			
+			
+			String summary=samsonStory.getSummaryAsString();
+			String instructions=samsonStory.provideInstructions().getValue();
+			String example=samsonStory.provideExample().getValue();
+			
+			WrittenElement contextMinusOne=samsonStory.priorContext(firstUser, "1", TaskType.NARRATIVE);
+			String str_contextMinusOne= "";
+			if contextMinusOne != null) str_contextMinusOne=contextMinusOne.getValue();
 			//Create User or Check if User exists
 				//Return profile 
 			
